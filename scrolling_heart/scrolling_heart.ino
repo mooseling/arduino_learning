@@ -33,9 +33,7 @@ void loop() {
 
 
 void updateTranslatedFrame(int offset) {
-
   for (int y = 0; y < 8; y++) {
-
     for (int x = 0; x < 12; x++) {
       translatedFrame[y][x] = baseFrame[y][(x + offset) % 12];
     }
