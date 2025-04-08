@@ -1,0 +1,253 @@
+<html>
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .card {
+            margin: 30pt auto;
+            width: 360pt;
+        }
+
+        #matrix-table {
+            display: flex;
+            flex-direction: column;
+            height: 240pt;
+            width: 360pt;
+            border-top: 1pt solid black;
+            border-left: 1pt solid black;
+        }
+
+        .row {
+            flex-grow: 1;
+            display: flex;
+            border-bottom: 1pt solid black;
+        }
+
+        .cell {
+            flex-grow: 1;
+            border-right: 1pt solid black;
+        }
+
+        .cell.red {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div id="matrix-table" class="card">
+        <div class="row" row="0">
+            <div class="cell" column="0"></div>
+            <div class="cell" column="1"></div>
+            <div class="cell" column="2"></div>
+            <div class="cell" column="3"></div>
+            <div class="cell" column="4"></div>
+            <div class="cell" column="5"></div>
+            <div class="cell" column="6"></div>
+            <div class="cell" column="7"></div>
+            <div class="cell" column="8"></div>
+            <div class="cell" column="9"></div>
+            <div class="cell" column="10"></div>
+            <div class="cell" column="11"></div>
+        </div>
+        <div class="row" row="1">
+            <div class="cell" column="0"></div>
+            <div class="cell" column="1"></div>
+            <div class="cell" column="2"></div>
+            <div class="cell" column="3"></div>
+            <div class="cell" column="4"></div>
+            <div class="cell" column="5"></div>
+            <div class="cell" column="6"></div>
+            <div class="cell" column="7"></div>
+            <div class="cell" column="8"></div>
+            <div class="cell" column="9"></div>
+            <div class="cell" column="10"></div>
+            <div class="cell" column="11"></div>
+        </div>
+        <div class="row" row="2">
+            <div class="cell" column="0"></div>
+            <div class="cell" column="1"></div>
+            <div class="cell" column="2"></div>
+            <div class="cell" column="3"></div>
+            <div class="cell" column="4"></div>
+            <div class="cell" column="5"></div>
+            <div class="cell" column="6"></div>
+            <div class="cell" column="7"></div>
+            <div class="cell" column="8"></div>
+            <div class="cell" column="9"></div>
+            <div class="cell" column="10"></div>
+            <div class="cell" column="11"></div>
+        </div>
+        <div class="row" row="3">
+            <div class="cell" column="0"></div>
+            <div class="cell" column="1"></div>
+            <div class="cell" column="2"></div>
+            <div class="cell" column="3"></div>
+            <div class="cell" column="4"></div>
+            <div class="cell" column="5"></div>
+            <div class="cell" column="6"></div>
+            <div class="cell" column="7"></div>
+            <div class="cell" column="8"></div>
+            <div class="cell" column="9"></div>
+            <div class="cell" column="10"></div>
+            <div class="cell" column="11"></div>
+        </div>
+        <div class="row" row="4">
+            <div class="cell" column="0"></div>
+            <div class="cell" column="1"></div>
+            <div class="cell" column="2"></div>
+            <div class="cell" column="3"></div>
+            <div class="cell" column="4"></div>
+            <div class="cell" column="5"></div>
+            <div class="cell" column="6"></div>
+            <div class="cell" column="7"></div>
+            <div class="cell" column="8"></div>
+            <div class="cell" column="9"></div>
+            <div class="cell" column="10"></div>
+            <div class="cell" column="11"></div>
+        </div>
+        <div class="row" row="5">
+            <div class="cell" column="0"></div>
+            <div class="cell" column="1"></div>
+            <div class="cell" column="2"></div>
+            <div class="cell" column="3"></div>
+            <div class="cell" column="4"></div>
+            <div class="cell" column="5"></div>
+            <div class="cell" column="6"></div>
+            <div class="cell" column="7"></div>
+            <div class="cell" column="8"></div>
+            <div class="cell" column="9"></div>
+            <div class="cell" column="10"></div>
+            <div class="cell" column="11"></div>
+        </div>
+        <div class="row" row="6">
+            <div class="cell" column="0"></div>
+            <div class="cell" column="1"></div>
+            <div class="cell" column="2"></div>
+            <div class="cell" column="3"></div>
+            <div class="cell" column="4"></div>
+            <div class="cell" column="5"></div>
+            <div class="cell" column="6"></div>
+            <div class="cell" column="7"></div>
+            <div class="cell" column="8"></div>
+            <div class="cell" column="9"></div>
+            <div class="cell" column="10"></div>
+            <div class="cell" column="11"></div>
+        </div>
+        <div class="row" row="7">
+            <div class="cell" column="0"></div>
+            <div class="cell" column="1"></div>
+            <div class="cell" column="2"></div>
+            <div class="cell" column="3"></div>
+            <div class="cell" column="4"></div>
+            <div class="cell" column="5"></div>
+            <div class="cell" column="6"></div>
+            <div class="cell" column="7"></div>
+            <div class="cell" column="8"></div>
+            <div class="cell" column="9"></div>
+            <div class="cell" column="10"></div>
+            <div class="cell" column="11"></div>
+        </div>
+    </div>
+
+    <div id="array-result" class="card"></div>
+    <div id="int-result" class="card">
+        Dec 1: <span id="dec1"></span><br>
+        Dec 2: <span id="dec2"></span><br>
+        Dec 3: <span id="dec3"></span><br>
+        <div id="int32-result"></div>
+    </div>
+</body>
+<script>
+const tableValues = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+]
+const table = document.getElementById('matrix-table');
+
+for (const rowElement of table.getElementsByClassName('row')) {
+    const rowIndex = Number(rowElement.getAttribute('row'));
+    for (const cellElement of rowElement.getElementsByClassName('cell')) {
+        const columnIndex = Number(cellElement.getAttribute('column'));
+        cellElement.addEventListener('click', () => {
+            const newValue = tableValues[rowIndex][columnIndex] ? 0 : 1
+
+            tableValues[rowIndex][columnIndex] = newValue;
+
+            if (newValue)
+                cellElement.classList.add('red');
+            else
+                cellElement.classList.remove('red');
+
+            updateArrayResult();
+            updateIntResult();
+        });
+    }
+}
+
+// Display initial outputs, even though they are just zeroes
+updateArrayResult();
+updateIntResult();
+
+
+function updateArrayResult() {
+    const t = tableValues;
+    document.getElementById('array-result').innerText = `{
+        {${t[0][0]}, ${t[0][1]}, ${t[0][2]}, ${t[0][3]}, ${t[0][4]}, ${t[0][5]}, ${t[0][6]}, ${t[0][7]}, ${t[0][8]}, ${t[0][9]}, ${t[0][10]}, ${t[0][11]}},
+        {${t[1][0]}, ${t[1][1]}, ${t[1][2]}, ${t[1][3]}, ${t[1][4]}, ${t[1][5]}, ${t[1][6]}, ${t[1][7]}, ${t[1][8]}, ${t[1][9]}, ${t[1][10]}, ${t[1][11]}},
+        {${t[2][0]}, ${t[2][1]}, ${t[2][2]}, ${t[2][3]}, ${t[2][4]}, ${t[2][5]}, ${t[2][6]}, ${t[2][7]}, ${t[2][8]}, ${t[2][9]}, ${t[2][10]}, ${t[2][11]}},
+        {${t[3][0]}, ${t[3][1]}, ${t[3][2]}, ${t[3][3]}, ${t[3][4]}, ${t[3][5]}, ${t[3][6]}, ${t[3][7]}, ${t[3][8]}, ${t[3][9]}, ${t[3][10]}, ${t[3][11]}},
+        {${t[4][0]}, ${t[4][1]}, ${t[4][2]}, ${t[4][3]}, ${t[4][4]}, ${t[4][5]}, ${t[4][6]}, ${t[4][7]}, ${t[4][8]}, ${t[4][9]}, ${t[4][10]}, ${t[4][11]}},
+        {${t[5][0]}, ${t[5][1]}, ${t[5][2]}, ${t[5][3]}, ${t[5][4]}, ${t[5][5]}, ${t[5][6]}, ${t[5][7]}, ${t[5][8]}, ${t[5][9]}, ${t[5][10]}, ${t[5][11]}},
+        {${t[6][0]}, ${t[6][1]}, ${t[6][2]}, ${t[6][3]}, ${t[6][4]}, ${t[6][5]}, ${t[6][6]}, ${t[6][7]}, ${t[6][8]}, ${t[6][9]}, ${t[6][10]}, ${t[6][11]}},
+        {${t[7][0]}, ${t[7][1]}, ${t[7][2]}, ${t[7][3]}, ${t[7][4]}, ${t[7][5]}, ${t[7][6]}, ${t[7][7]}, ${t[7][8]}, ${t[7][9]}, ${t[7][10]}, ${t[7][11]}},
+    }`;
+}
+
+
+function updateIntResult() {
+    const int1 = sum2dBinary(tableValues, 0, 32);
+    const int2 = sum2dBinary(tableValues, 32, 32);
+    const int3 = sum2dBinary(tableValues, 64, 32);
+
+    document.getElementById('dec1').innerText = int1;
+    document.getElementById('dec2').innerText = int2;
+    document.getElementById('dec3').innerText = int3;
+
+    document.getElementById('int32-result').innerText = `{
+        0x${int1.toString(16)},
+        0x${int2.toString(16)},
+        0x${int3.toString(16)}
+    }`;
+}
+
+
+function sum2dBinary(array, startIndex, bitsPerSum) {
+    const endIndex = startIndex + bitsPerSum; // Not inclusive, don't add this one to sum
+    let sum = 0;
+    let linearIndex = 0;
+
+    array.forEach((row, y) => {
+        row.forEach((value, x) => {
+            // If it's a 1, and it falls in the right range, we're gunna add it
+            if (value && linearIndex >= startIndex && linearIndex < endIndex) {
+                // We're converting a binary value to decimal, so we need to figure out the power of 2 for this column
+                const binaryColumn = bitsPerSum - (linearIndex - startIndex) - 1;
+                const binaryColumnValue = 2**binaryColumn;
+                sum += binaryColumnValue;
+            }
+            linearIndex++;
+        });
+    });
+
+    return sum;
+}
+</script>
+</html>
