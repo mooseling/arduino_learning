@@ -41,23 +41,3 @@ void updateTranslatedFrame(int offset) {
     }
   }
 }
-
-
-// byte** create2dArray(int columnCount, int rowCount) {
-//   Serial.println("Create 2d array");
-//   byte **array = (byte **)malloc(rowCount * sizeof(byte *));
-
-//   for (int row = 0; row < rowCount; row++) {
-//     array[row] = (byte *)malloc(columnCount * sizeof(byte));
-//   }
-
-//   return array;
-// }
-
-
-// void free2dArray(byte** array, int rowCount) {
-//   for (int row = 0; row < rowCount; row++) {
-//     free(array[row]);
-//   }
-//   free(array);
-// }
