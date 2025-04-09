@@ -2,9 +2,9 @@
 ArduinoLEDMatrix matrix;
 
 unsigned long frame[] = {
-    0x88053,
-    0x83444d44,
-    0x9440a201
+    0x111c,
+    0xa22c2b22,
+    0x92502804
 };
 
 
