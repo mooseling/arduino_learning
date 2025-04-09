@@ -41,8 +41,8 @@ void translateFrame() {
   // Add the start of rows 3 and 4, which just need to move within frame[1]
   handExtracted2 = handExtracted2 | (frame[1] << 11) & 134250496;  // Bitmask 0000 1000 0000 0000 1000 0000 0000 0000
 
-  // Add the start of row 5, which is in frame[2]
-  handExtracted2 = handExtracted2 | (frame[1] << 11) & 134250496;
+  // Add the start of row 5, which is at index 7 in frame[2]
+  handExtracted2 = handExtracted2 | (frame[2] >> 21) & 8; // Bitmask 0000 0000 0000 0000 0000 0000 0000 1000
 
   // frame[2] has 3 values we need to find
   // Extract the start of frame[2]. The value is the last bit in frame[1]
